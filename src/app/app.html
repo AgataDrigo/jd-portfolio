@@ -1,111 +1,103 @@
-<div class="min-h-screen bg-white text-slate-700 md:flex">
-  <aside
-    class="flex flex-col gap-8 bg-slate-900 p-8 text-slate-300 md:fixed md:inset-y-0 md:w-72 md:overflow-y-auto md:p-10"
-  >
-    <div class="flex flex-col items-center gap-4 text-center">
-      <div
-        class="flex h-24 w-24 items-center justify-center rounded-full bg-slate-700 text-2xl font-semibold text-white ring-4 ring-slate-600"
-      >
-        YN
-      </div>
-      <div>
-        <h1 class="text-lg font-semibold text-white">[Your Name]</h1>
-        <p class="mt-1 text-sm text-slate-400">M.A. Candidate in Linguistics</p>
-        <p class="text-sm text-slate-400">[University Name]</p>
-      </div>
+<div class="min-h-screen bg-stone-50 text-stone-800">
+  <header class="sticky top-0 z-10 border-b border-stone-200 bg-stone-50/95 backdrop-blur">
+    <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-4">
+      <a href="#top" class="font-serif text-lg font-semibold text-stone-900">[Your Name]</a>
+      <nav>
+        <ul class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-stone-600">
+          <li><a href="#about" class="hover:text-amber-800">About</a></li>
+          <li><a href="#education" class="hover:text-amber-800">Education</a></li>
+          <li><a href="#research" class="hover:text-amber-800">Research</a></li>
+          <li><a href="#publications" class="hover:text-amber-800">Publications</a></li>
+          <li><a href="#experience" class="hover:text-amber-800">Experience</a></li>
+          <li><a href="#skills" class="hover:text-amber-800">Skills</a></li>
+          <li><a href="#contact" class="hover:text-amber-800">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <nav class="text-sm font-medium">
-      <ul class="space-y-1">
-        <li><a href="#about" class="block rounded px-3 py-2 hover:bg-slate-800 hover:text-white">About</a></li>
-        <li><a href="#education" class="block rounded px-3 py-2 hover:bg-slate-800 hover:text-white">Education</a></li>
-        <li><a href="#research" class="block rounded px-3 py-2 hover:bg-slate-800 hover:text-white">Research</a></li>
-        <li><a href="#publications" class="block rounded px-3 py-2 hover:bg-slate-800 hover:text-white">Publications & Presentations</a></li>
-        <li><a href="#experience" class="block rounded px-3 py-2 hover:bg-slate-800 hover:text-white">Experience</a></li>
-        <li><a href="#skills" class="block rounded px-3 py-2 hover:bg-slate-800 hover:text-white">Skills</a></li>
-        <li><a href="#contact" class="block rounded px-3 py-2 hover:bg-slate-800 hover:text-white">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="mt-auto space-y-2 text-sm text-slate-400">
-      <p><span class="text-slate-500">Email:</span> [your.name@email.com]</p>
-      <p><span class="text-slate-500">Location:</span> [City, Country]</p>
-      <div class="flex gap-3 pt-2">
-        <a href="#" class="hover:text-white">LinkedIn</a>
-        <a href="#" class="hover:text-white">CV (PDF)</a>
+  <main class="mx-auto max-w-3xl px-6 py-16">
+    <section id="top" class="mb-20 scroll-mt-24">
+      <h1 class="font-serif text-4xl font-semibold text-stone-900 sm:text-5xl">[Your Name]</h1>
+      <p class="mt-3 text-lg text-stone-600">M.A. Candidate in Linguistics · [University Name]</p>
+      <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-500">
+        <span>[City, Country]</span>
+        <a href="mailto:your.name@email.com" class="hover:text-amber-800">[your.name@email.com]</a>
+        <a href="#" class="hover:text-amber-800">LinkedIn</a>
+        <a href="#" class="hover:text-amber-800">CV (PDF)</a>
       </div>
-    </div>
-  </aside>
+    </section>
 
-  <main class="flex-1 md:ml-72">
-    <div class="mx-auto max-w-3xl space-y-20 px-6 py-16 md:px-12 md:py-20">
-      <section id="about" class="scroll-mt-8">
-        <h2 class="mb-4 border-b border-slate-200 pb-2 text-2xl font-semibold text-slate-900">About</h2>
-        <p class="leading-relaxed text-slate-600">
-          [Write a short 2–3 sentence introduction: who you are, what you study, and what draws
+    <div class="space-y-16">
+      <section id="about" class="scroll-mt-24">
+        <h2 class="font-serif text-2xl font-semibold text-stone-900">About</h2>
+        <p class="mt-3 leading-relaxed text-stone-600">
+          [Write a short 2-3 sentence introduction: who you are, what you study, and what draws
           you to linguistics.]
         </p>
       </section>
 
-      <section id="education" class="scroll-mt-8">
-        <h2 class="mb-4 border-b border-slate-200 pb-2 text-2xl font-semibold text-slate-900">Education</h2>
-        <div class="space-y-5">
+      <section id="education" class="scroll-mt-24">
+        <h2 class="font-serif text-2xl font-semibold text-stone-900">Education</h2>
+        <div class="mt-3 space-y-5">
           <div>
-            <h3 class="font-medium text-slate-900">M.A. in Linguistics — [University Name]</h3>
-            <p class="text-sm text-slate-500">[Start Year] – [End Year]</p>
-            <p class="mt-1 text-slate-600">[Focus area, advisor, or relevant coursework.]</p>
+            <h3 class="font-medium text-stone-900">M.A. in Linguistics — [University Name]</h3>
+            <p class="text-sm text-stone-500">[Start Year] - [End Year]</p>
+            <p class="mt-1 text-stone-600">[Focus area, advisor, or relevant coursework.]</p>
           </div>
           <div>
-            <h3 class="font-medium text-slate-900">B.A. in [Field] — [University Name]</h3>
-            <p class="text-sm text-slate-500">[Start Year] – [End Year]</p>
+            <h3 class="font-medium text-stone-900">B.A. in [Field] — [University Name]</h3>
+            <p class="text-sm text-stone-500">[Start Year] - [End Year]</p>
           </div>
         </div>
       </section>
 
-      <section id="research" class="scroll-mt-8">
-        <h2 class="mb-4 border-b border-slate-200 pb-2 text-2xl font-semibold text-slate-900">Research</h2>
-        <div>
-          <h3 class="font-medium text-slate-900">Thesis: [Working Title]</h3>
-          <p class="mt-1 text-slate-600">
-            [1–2 sentence summary of your thesis or current research project.]
+      <section id="research" class="scroll-mt-24">
+        <h2 class="font-serif text-2xl font-semibold text-stone-900">Research</h2>
+        <div class="mt-3">
+          <h3 class="font-medium text-stone-900">Thesis: [Working Title]</h3>
+          <p class="mt-1 text-stone-600">
+            [1-2 sentence summary of your thesis or current research project.]
           </p>
         </div>
       </section>
 
-      <section id="publications" class="scroll-mt-8">
-        <h2 class="mb-4 border-b border-slate-200 pb-2 text-2xl font-semibold text-slate-900">
-          Publications & Presentations
-        </h2>
-        <ul class="space-y-3 text-slate-600">
+      <section id="publications" class="scroll-mt-24">
+        <h2 class="font-serif text-2xl font-semibold text-stone-900">Publications & Presentations</h2>
+        <ul class="mt-3 space-y-3 text-stone-600">
           <li>[Author(s)]. ([Year]). [Title of paper or talk]. [Venue/Conference].</li>
         </ul>
       </section>
 
-      <section id="experience" class="scroll-mt-8">
-        <h2 class="mb-4 border-b border-slate-200 pb-2 text-2xl font-semibold text-slate-900">Experience</h2>
-        <div>
-          <h3 class="font-medium text-slate-900">[Role/Title] — [Organization]</h3>
-          <p class="text-sm text-slate-500">[Start] – [End]</p>
-          <p class="mt-1 text-slate-600">[Short description of responsibilities.]</p>
+      <section id="experience" class="scroll-mt-24">
+        <h2 class="font-serif text-2xl font-semibold text-stone-900">Experience</h2>
+        <div class="mt-3">
+          <h3 class="font-medium text-stone-900">[Role/Title] — [Organization]</h3>
+          <p class="text-sm text-stone-500">[Start] - [End]</p>
+          <p class="mt-1 text-stone-600">[Short description of responsibilities.]</p>
         </div>
       </section>
 
-      <section id="skills" class="scroll-mt-8">
-        <h2 class="mb-4 border-b border-slate-200 pb-2 text-2xl font-semibold text-slate-900">Skills</h2>
-        <div class="grid grid-cols-1 gap-x-6 gap-y-2 text-slate-600 sm:grid-cols-2">
-          <p><span class="font-medium text-slate-900">Languages:</span> [English (native), ...]</p>
-          <p><span class="font-medium text-slate-900">Methods:</span> [e.g. corpus analysis, phonetic transcription]</p>
-          <p><span class="font-medium text-slate-900">Tools:</span> [e.g. Praat, ELAN, R, Python]</p>
+      <section id="skills" class="scroll-mt-24">
+        <h2 class="font-serif text-2xl font-semibold text-stone-900">Skills</h2>
+        <div class="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 text-stone-600 sm:grid-cols-2">
+          <p><span class="font-medium text-stone-900">Languages:</span> [English (native), ...]</p>
+          <p><span class="font-medium text-stone-900">Methods:</span> [e.g. corpus analysis, phonetic transcription]</p>
+          <p><span class="font-medium text-stone-900">Tools:</span> [e.g. Praat, ELAN, R, Python]</p>
         </div>
       </section>
 
-      <section id="contact" class="scroll-mt-8">
-        <h2 class="mb-4 border-b border-slate-200 pb-2 text-2xl font-semibold text-slate-900">Contact</h2>
-        <p class="text-slate-600">
+      <section id="contact" class="scroll-mt-24">
+        <h2 class="font-serif text-2xl font-semibold text-stone-900">Contact</h2>
+        <p class="mt-3 text-stone-600">
           Feel free to reach out at
-          <a href="mailto:your.name@email.com" class="text-indigo-600 hover:underline">[your.name@email.com]</a>
+          <a href="mailto:your.name@email.com" class="text-amber-800 hover:underline">[your.name@email.com]</a>
         </p>
       </section>
     </div>
   </main>
+
+  <footer class="border-t border-stone-200 py-8 text-center text-sm text-stone-400">
+    [Your Name] · updated [Month Year]
+  </footer>
 </div>

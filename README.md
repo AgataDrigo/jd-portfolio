@@ -1,59 +1,74 @@
 # JdPortfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.5.
+A single-page academic portfolio/CV site, built with Angular. The site's text content (bio, education, publications, etc.) lives in one plain data file, so it can be updated without touching any code.
 
-## Development server
+## Updating the site content
 
-To start a local development server, run:
+All of the content on the page lives in one file:
 
-```bash
-ng serve
+```
+public/content.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The site is connected to Cloudflare, which watches the `main` branch: **as soon as a change is committed to `main`, the live site rebuilds and updates automatically**, usually within a minute or two.
 
-## Code scaffolding
+### How to edit it
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. Go to the repository on GitHub and open `public/content.json`.
+2. Click the pencil icon (top right of the file view) to edit it in your browser.
+3. Make your changes (see field guide and formatting rules below).
+4. Scroll down to "Commit changes":
+   - For a small, low-risk fix (fixing a typo, updating a date), you can commit directly to `main` — it'll go live right away.
+5. Click **Commit changes**.
 
-```bash
-ng generate component component-name
-```
+If you'd rather edit locally: clone the repo, open `public/content.json` in any text editor (including Notepad), save your changes, then commit and push them.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Formatting rules (important!!)
 
-```bash
-ng generate --help
-```
+`content.json` is a JSON file, which is picky about punctuation. Breaking these rules won't crash anything permanently, but the page will show "Couldn't load page content" until it's fixed:
 
-## Building
+- Every piece of text must be wrapped in **double quotes**: `"like this"`.
+- Every entry in a list needs a **comma** after it — except the very last one.
+- If your text itself contains a double quote (`"`), put a backslash before it: `\"like this\"`.
+- Don't remove or rename anything to the **left** of a colon (e.g. `"degree":`, `"years":`) — those are field names the app relies on. Only change the text to the **right** of the colon.
+  - If you need to, a more hands on alteration will be needed.
+- Keep matching curly braces `{ }` and square brackets `[ ]` — if you copy an entry to duplicate it, make sure you copy the whole block, including its opening and closing brace.
 
-To build the project run:
+If something goes wrong, the site will show a friendly error message instead of breaking silently — just go back and check for a missing quote or comma near your last edit, or undo the commit on GitHub ("Revert" button on the commit page).
 
-```bash
-ng build
-```
+**Tip:** if you're not sure your edit is valid, paste the whole file into a free JSON validator like [jsonlint.com](https://jsonlint.com) before committing — it'll point out exactly where the syntax is broken.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Field guide
 
-## Running unit tests
+| Field                                              | What it is                                                                                                                                                   |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `name`                                             | Full name, shown in the header and page title.                                                                                                               |
+| `tagline`                                          | Short one-line description under the name.                                                                                                                   |
+| `university`, `location`, `email`                  | Contact/affiliation details.                                                                                                                                 |
+| `photoUrl`                                         | Path to the profile photo (see "Updating the photo or CV" below).                                                                                            |
+| `linkedinUrl`, `academiaUrl`, `blueskyUrl`         | Profile links. Leave as `""` (empty quotes) to hide a link.                                                                                                  |
+| `cvUrl`                                            | Path to the downloadable CV PDF.                                                                                                                             |
+| `about`                                            | A list of paragraphs for the About section. Add or remove lines to add/remove paragraphs.                                                                    |
+| `education`                                        | A list of entries, each with `degree`, `institution`, `years`, and `detail`. Copy an existing entry to add a new one.                                        |
+| `researchInterests`                                | A list of short text bullet points.                                                                                                                          |
+| `publications.peerReviewed` / `publications.other` | Two separate lists of publication citations (plain text strings).                                                                                            |
+| `selectedPresentations`                            | A curated list of presentations shown on the page. Keep this short — this section deliberately doesn't list everything; the full list belongs in the CV PDF. |
+| `teaching`                                         | A list of entries, each with `title`, `institution`, `years`.                                                                                                |
+| `teachingNote`                                     | One paragraph of extra teaching context, shown below the teaching list.                                                                                      |
+| `fellowships`                                      | A list of short text bullet points.                                                                                                                          |
+| `languages.modern` / `languages.historical`        | Two paragraphs of text describing language proficiency.                                                                                                      |
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Adding or removing a list item
 
-```bash
-ng test
-```
+To add an entry (e.g. a new publication or teaching entry): copy an existing one in that list, paste it right below (or above), add a comma after the entry above it, and edit the copied text. For simple lists (like `researchInterests` or `fellowships`), each entry is just a quoted string; for entries with `institution`/`years`/etc. (like `education` or `teaching`), copy the whole `{ ... }` block.
 
-## Running end-to-end tests
+To remove an entry, delete the whole block/line for it, and make sure the entry before it doesn't end with a trailing comma if it's now the last one in the list.
 
-For end-to-end (e2e) testing, run:
+### Updating the photo or CV PDF
 
-```bash
-ng e2e
-```
+Both files live in `public/`:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `public/profile.jpeg` — the profile photo.
+- `public/Jasmim-Drigo-CV.pdf` — the downloadable CV.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The easiest way to update either: upload a new file with the **same name** to the `public/` folder on GitHub (this overwrites the old one) — no changes to `content.json` needed. If you upload a file under a different name instead, update `photoUrl` or `cvUrl` in `content.json` to match the new filename (paths start with `/`, e.g. `/my-new-photo.jpg`).

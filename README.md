@@ -2,6 +2,10 @@
 
 A single-page academic portfolio/CV site, built with Angular. The site's content lives in one plain data file, so it can be updated without touching any code.
 
+Official code in the owner's github: [here](https://github.com/jasmimdrigo/jasmimdrigo.github.io).
+Hosted officially [here](jasmimdrigo.github.io).
+Hosted as a test [here](https://agatadrigo.github.io/jd-portfolio/).
+
 ## Updating the site content
 
 All of the content on the page lives in one file: `public/content.json`.
